@@ -2,8 +2,6 @@ const webpack = require("webpack"),
     path = require('path'),
     ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-console.log(process.argv);
-
 module.exports = function(config) {
     return {
 
@@ -12,7 +10,7 @@ module.exports = function(config) {
             '**/*.test.js'
         ],
 
-        exclude: ['node_modules'],
+        exclude: ['**/node_modules/**/*.test.js'],
 
         frameworks: ['mocha', 'chai', 'sinon'],
 
@@ -51,10 +49,6 @@ module.exports = function(config) {
 
             resolve: {
                 modulesDirectories: ['node_modules', ''],
-                alias: {
-                    'inputmask.dependencyLib': 'jquery.inputmask/dist/inputmask/inputmask.dependencyLib.jquery',
-                    inputmask: 'jquery.inputmask/dist/inputmask/inputmask'
-                }
             },
             plugins: [
                 new ExtractTextPlugin('[name].css')
