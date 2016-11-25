@@ -10,9 +10,7 @@ module.exports = config => {
 
         files: [
             'node_modules/babel-polyfill/dist/polyfill.min.js',
-            'mdCore/__tests__/*.test.js',
-            'mdCommon/components/*/__tests__/*.test.js'
-            // '**/__tests__/*.test.js'
+            '**/*.test.js'
         ],
 
         exclude: ['node_modules'],
@@ -23,9 +21,7 @@ module.exports = config => {
         singleRun: true,
 
         preprocessors: {
-            //'**/__tests__/*.test.js': ['webpack', 'sourcemap']
-            'mdCore/__tests__/*.test.js': ['webpack', 'sourcemap'],
-            'mdCommon/components/*/__tests__/*.test.js': ['webpack', 'sourcemap']
+            '**/*.test.js': ['webpack', 'sourcemap']
         },
 
         reporters: ['mocha'],
