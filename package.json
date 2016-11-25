@@ -2,7 +2,7 @@
   "name": "karma-es6-webpack-config",
   "version": "0.0.1",
   "description": "",
-  "main": "karma.conf.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
