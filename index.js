@@ -3,6 +3,6 @@ var karmaConf = require('./karma.conf.js'),
 
 module.exports = function(options) {
     return function (config) {
-        config.set(options ? merge(karmaConf(config), options) : karmaConf(config));
+        config.set(options ? merge(true, karmaConf(config), options) : karmaConf(config));
     };
 }
