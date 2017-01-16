@@ -23,7 +23,6 @@ module.exports = function(config) {
 
         reporters: ['mocha'],
 
-
         webpack: {
             module: {
                 devtool: 'inline-source-map',
@@ -38,17 +37,28 @@ module.exports = function(config) {
                             plugins: ['transform-class-properties']
                         }
                     },
-                    {test: /\.less$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss!less?sourceMap')},
+                    { test: /\.less$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss!less?sourceMap') },
                     // {test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss')},
                     // {test: /\.html$/, loader: 'html-loader'},
                     // {test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader'},
                     // {test: /\.(eot|woff|woff2|ttf)$/, loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'},
-                    {test: /\.hbs$/, loader: 'handlebars-loader'}
+                    { test: /\.hbs$/, loader: 'handlebars-loader' }
                 ]
             },
 
             resolve: {
-                modulesDirectories: ['node_modules', ''],
+                modulesDirectories: [
+                    'node_modules', 'web_modules',
+                    'node_modules',
+                    './node_modules/@moedelo/md-frontendcore',
+                    './node_modules/@moedelo/frontend-enums',
+                ],
+                alias: {
+                    'inputmask.dependencyLib': 'jquery.inputmask/dist/inputmask/inputmask.dependencyLib.jquery.js',
+                    inputmask: 'jquery.inputmask/dist/inputmask/inputmask.js',
+                    frontendCommon: '@moedelo/frontend-common',
+                    frontendEnums: '@moedelo/frontend-enums'
+                }
             },
             plugins: [
                 new ExtractTextPlugin('[name].css')
