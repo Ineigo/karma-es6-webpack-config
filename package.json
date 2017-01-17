@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "babel": "^6.5.2",
+    "null-loader": "*",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
     "babel-plugin-transform-class-properties": "^6.18.0",

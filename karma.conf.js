@@ -1,6 +1,5 @@
-const webpack = require("webpack"),
-    path = require('path'),
-    ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
+const path = require('path');
 
 module.exports = function(config) {
     return {
@@ -37,11 +36,7 @@ module.exports = function(config) {
                             plugins: ['transform-class-properties']
                         }
                     },
-                    { test: /\.less$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss!less?sourceMap') },
-                    // {test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss')},
-                    // {test: /\.html$/, loader: 'html-loader'},
-                    // {test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader'},
-                    // {test: /\.(eot|woff|woff2|ttf)$/, loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'},
+                    { test: /\.less$/, loader:'null-loader'},
                     { test: /\.hbs$/, loader: 'handlebars-loader' }
                 ]
             },
@@ -51,11 +46,8 @@ module.exports = function(config) {
                     'node_modules', 'web_modules',
                     'node_modules'
                 ],
-                alias: { }
-            },
-            plugins: [
-                new ExtractTextPlugin('[name].css')
-            ]
+                alias: {}
+            }
         },
         webpackServer: {
             noInfo: true
