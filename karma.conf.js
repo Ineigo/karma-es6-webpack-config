@@ -1,7 +1,5 @@
 const webpack = require("webpack");
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const webstaticDir = '../../src/webStatic';
 
 module.exports = function(config) {
     return {
@@ -49,20 +47,10 @@ module.exports = function(config) {
             resolve: {
                 modulesDirectories: [
                     'node_modules', 'web_modules',
-                    'node_modules',
-                    './node_modules/@moedelo/md-frontendcore',
-                    './node_modules/@moedelo/frontend-enums',
+                    'node_modules'
                 ],
-                alias: {
-                    'inputmask.dependencyLib': 'jquery.inputmask/dist/inputmask/inputmask.dependencyLib.jquery.js',
-                    inputmask: 'jquery.inputmask/dist/inputmask/inputmask.js',
-                    frontendCommon: '@moedelo/frontend-common',
-                    frontendEnums: '@moedelo/frontend-enums'
-                }
-            },
-            plugins: [
-                new ExtractTextPlugin('[name].css')
-            ]
+                alias: {}
+            }
         },
         webpackServer: {
             noInfo: true
