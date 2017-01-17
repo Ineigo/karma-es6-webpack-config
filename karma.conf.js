@@ -30,10 +30,7 @@ module.exports = function(config) {
                     {
                         test: /\.js$/,
                         loader: 'babel',
-                        include: [
-                            path.resolve(__dirname, '../@moedelo'),
-                            path.resolve(__dirname, webstaticDir),
-                        ],
+                        exclude: /(node_modules|bower_components)/,
                         query: {
                             presets: [require.resolve('babel-preset-es2015'), require.resolve('babel-preset-react')], //
                             plugins: ['transform-class-properties']
