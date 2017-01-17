@@ -1,6 +1,6 @@
 {
   "name": "karma-es6-webpack-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Готовая конфигурация для тестирования приложений alpha",
   "main": "index.js",
   "scripts": {
