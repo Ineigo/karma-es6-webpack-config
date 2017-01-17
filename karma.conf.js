@@ -49,16 +49,9 @@ module.exports = function(config) {
             resolve: {
                 modulesDirectories: [
                     'node_modules', 'web_modules',
-                    'node_modules',
-                    './node_modules/@moedelo/md-frontendcore',
-                    './node_modules/@moedelo/frontend-enums',
+                    'node_modules'
                 ],
-                alias: {
-                    'inputmask.dependencyLib': 'jquery.inputmask/dist/inputmask/inputmask.dependencyLib.jquery.js',
-                    inputmask: 'jquery.inputmask/dist/inputmask/inputmask.js',
-                    frontendCommon: '@moedelo/frontend-common',
-                    frontendEnums: '@moedelo/frontend-enums'
-                }
+                alias: { }
             },
             plugins: [
                 new ExtractTextPlugin('[name].css')
